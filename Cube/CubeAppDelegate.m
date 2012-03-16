@@ -22,32 +22,52 @@
   
   GLKView *view = [[GLKView alloc] initWithFrame:[[UIScreen mainScreen] bounds] context:context];
   view.delegate = self;
- 
+
+  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(addCube)];
+  [view addGestureRecognizer: tap];
+
   GLKViewController *controller = [[GLKViewController alloc] init];
   controller.delegate = self;
   controller.view = view;
-  
+
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.rootViewController = controller;
   [self.window makeKeyAndVisible];
   
-  cubes = [[NSMutableArray alloc] init];
-  
+  cubes = [[NSMutableArray alloc] init]; 
+  srandom(time(NULL));
+  [self addCube];
+
+  /*
+   ColorfulCube *cube = [[ColorfulCube alloc] init];
+   cube.position = GLKVector3Make(0.25, 0.25, 0.0);
+   cube.scale = GLKVector3Make(0.5, 0.5, 0.5);
+   cube.rotation = GLKVector3Make(1.0/8*M_TAU, 1.0/8*M_TAU, 0);
+   cube.rps = GLKVector3Make(0.5, 0.4, 0.3);
+   [cubes addObject:cube];
+   
+   ColorfulCube *cube2 = [[ColorfulCube alloc] init];
+   cube2.position = GLKVector3Make(-0.5, -0.25, 0.0);
+   cube2.scale = GLKVector3Make(0.4, 0.4, 0.4);
+   cube2.rotation = GLKVector3Make(1.0/8*M_TAU, 0, 1.0/8*M_TAU);
+   cube2.rps = GLKVector3Make(0.3, 0.5, 0.4);
+   [cubes addObject:cube2];
+  */
+
+  return YES;
+}
+
+- (CGFloat) randValue {
+  return (random()%100)/100.0f;
+}
+
+- (void) addCube {
   ColorfulCube *cube = [[ColorfulCube alloc] init];
-  cube.position = GLKVector3Make(0.25, 0.25, 0.0);
-  cube.scale = GLKVector3Make(0.5, 0.5, 0.5);
+  cube.position = GLKVector3Make([self randValue], [self randValue], [self randValue]);
+  cube.scale = GLKVector3Make([self randValue], [self randValue], [self randValue]);
   cube.rotation = GLKVector3Make(1.0/8*M_TAU, 1.0/8*M_TAU, 0);
   cube.rps = GLKVector3Make(0.5, 0.4, 0.3);
   [cubes addObject:cube];
-  
-  ColorfulCube *cube2 = [[ColorfulCube alloc] init];
-  cube2.position = GLKVector3Make(-0.5, -0.25, 0.0);
-  cube2.scale = GLKVector3Make(0.4, 0.4, 0.4);
-  cube2.rotation = GLKVector3Make(1.0/8*M_TAU, 0, 1.0/8*M_TAU);
-  cube2.rps = GLKVector3Make(0.3, 0.5, 0.4);
-  [cubes addObject:cube2];
-  
-  return YES;
 }
 
 - (void)glkViewControllerUpdate:(GLKViewController *)controller {
