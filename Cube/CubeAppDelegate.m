@@ -8,6 +8,7 @@
 
 #import "CubeAppDelegate.h"
 #import "ColorfulCube.h"
+#import "ColorfulPyramid.h"
 
 #define M_TAU (2*M_PI)
 
@@ -36,23 +37,28 @@
   
   cubes = [[NSMutableArray alloc] init]; 
   srandom(time(NULL));
-  [self addCube];
+//  [self addCube];
 
+  ColorfulPyramid *shape = [[ColorfulPyramid alloc] init];
+  shape.position = GLKVector3Make(0.25, 0.25, 0.0);
+  shape.scale = GLKVector3Make(0.5, 0.5, 0.5);
+  shape.rotation = GLKVector3Make(1.0/8*M_TAU, 1.0/8*M_TAU, 0);
+  shape.rps = GLKVector3Make(0.5, 0.4, 0.3);
+  [cubes addObject:shape];
   /*
-   ColorfulCube *cube = [[ColorfulCube alloc] init];
-   cube.position = GLKVector3Make(0.25, 0.25, 0.0);
-   cube.scale = GLKVector3Make(0.5, 0.5, 0.5);
-   cube.rotation = GLKVector3Make(1.0/8*M_TAU, 1.0/8*M_TAU, 0);
-   cube.rps = GLKVector3Make(0.5, 0.4, 0.3);
-   [cubes addObject:cube];
-   
-   ColorfulCube *cube2 = [[ColorfulCube alloc] init];
-   cube2.position = GLKVector3Make(-0.5, -0.25, 0.0);
-   cube2.scale = GLKVector3Make(0.4, 0.4, 0.4);
-   cube2.rotation = GLKVector3Make(1.0/8*M_TAU, 0, 1.0/8*M_TAU);
-   cube2.rps = GLKVector3Make(0.3, 0.5, 0.4);
-   [cubes addObject:cube2];
-  */
+  ColorfulCube *cube = [[ColorfulCube alloc] init];
+  cube.position = GLKVector3Make(0.25, 0.25, 0.0);
+  cube.scale = GLKVector3Make(0.5, 0.5, 0.5);
+  cube.rotation = GLKVector3Make(1.0/8*M_TAU, 1.0/8*M_TAU, 0);
+  cube.rps = GLKVector3Make(0.5, 0.4, 0.3);
+  [cubes addObject:cube];
+
+  ColorfulCube *cube2 = [[ColorfulCube alloc] init];
+  cube2.position = GLKVector3Make(-0.5, -0.25, 0.0);
+  cube2.scale = GLKVector3Make(0.4, 0.4, 0.4);
+  cube2.rotation = GLKVector3Make(1.0/8*M_TAU, 0, 1.0/8*M_TAU);
+  cube2.rps = GLKVector3Make(0.3, 0.5, 0.4);
+  [cubes addObject:cube2];*/
 
   return YES;
 }

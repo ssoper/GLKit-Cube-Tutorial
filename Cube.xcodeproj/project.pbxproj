@@ -17,6 +17,7 @@
 		3CD22C1F13D5ED53001844CD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD22C1E13D5ED53001844CD /* GLKit.framework */; };
 		3CD22C2113D5ED58001844CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD22C2013D5ED58001844CD /* QuartzCore.framework */; };
 		3CD22C2813D65C4C001844CD /* ColorfulCube.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD22C2713D65C4B001844CD /* ColorfulCube.m */; };
+		8DE6BA031514E60700E1480E /* ColorfulPyramid.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6BA021514E60700E1480E /* ColorfulPyramid.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		3CD22C2013D5ED58001844CD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3CD22C2613D65C4B001844CD /* ColorfulCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorfulCube.h; sourceTree = "<group>"; };
 		3CD22C2713D65C4B001844CD /* ColorfulCube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorfulCube.m; sourceTree = "<group>"; };
+		8DE6BA011514E60700E1480E /* ColorfulPyramid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorfulPyramid.h; sourceTree = "<group>"; };
+		8DE6BA021514E60700E1480E /* ColorfulPyramid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorfulPyramid.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				3CD22C1513D5EBFF001844CD /* CubeAppDelegate.m */,
 				3CD22C2613D65C4B001844CD /* ColorfulCube.h */,
 				3CD22C2713D65C4B001844CD /* ColorfulCube.m */,
+				8DE6BA011514E60700E1480E /* ColorfulPyramid.h */,
+				8DE6BA021514E60700E1480E /* ColorfulPyramid.m */,
 				3CD22C0C13D5EBFF001844CD /* Supporting Files */,
 			);
 			path = Cube;
@@ -133,7 +138,7 @@
 		3CD22BF813D5EBFF001844CD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = "Ian Terrell";
+				ORGANIZATIONNAME = "";
 			};
 			buildConfigurationList = 3CD22BFB13D5EBFF001844CD /* Build configuration list for PBXProject "Cube" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -171,6 +176,7 @@
 				3CD22C1213D5EBFF001844CD /* main.m in Sources */,
 				3CD22C1613D5EBFF001844CD /* CubeAppDelegate.m in Sources */,
 				3CD22C2813D65C4C001844CD /* ColorfulCube.m in Sources */,
+				8DE6BA031514E60700E1480E /* ColorfulPyramid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +282,7 @@
 				3CD22C1B13D5EBFF001844CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
